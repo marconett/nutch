@@ -142,7 +142,7 @@ public class SitemapProcessor extends Configured implements Tool {
             return;
           }
           // We may wish to use the robots.txt content as the third parameter for .getRobotRules
-          BaseRobotRules rules = protocolFactory.getProtocol(url).getRobotRules(new Text(url), datum, null);
+          BaseRobotRules rules = protocolFactory.getProtocol(url).getRobotRules(new Text(url), datum);
           List<String> sitemaps = rules.getSitemaps();
 
           if (tryDefaultSitemapXml && sitemaps.size() == 0) {
